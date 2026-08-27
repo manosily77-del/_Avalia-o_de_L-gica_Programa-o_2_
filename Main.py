@@ -164,7 +164,7 @@ def main():
             if confirmacao == "s":
                 cadastrar_livro(livros, titulo, autor, ano, isbn)
                 salvar_livros(livros)
-                print("Parabéns! Livro cadastrado com sucesso!")
+                print("Parabéns! Livro cadastrado com sucesso!\n")
 
             else:
                 print("Cadastro cancelado.")
@@ -227,7 +227,7 @@ def main():
 
             if not isbn.isdigit():
                 print("ISBN precisa ser um número!")
-                print("Por favor, tente novamente.")
+                print("Por favor, tente novamente.\n")
                 continue
 
             mensagem = devolver_livro(livros,isbn)
@@ -238,14 +238,15 @@ def main():
             print(f"\nTotal de livros: {len(livros)}")
             disponiveis = 0
             emprestados = 0
+            
             for livro in livros:
-                if livro["status"] == "disponivel":
+                if livro['status'] == "disponivel":
                     disponiveis += 1
 
-        elif livro["status"] == "emprestado":
-            emprestados += 1
-            print(f"Livros disponíveis: {disponiveis}")
-            print(f"Livros emprestados: {emprestados}\n")
+                elif livro['status'] == "emprestado":
+                    emprestados += 1
+                    print(f"Livros disponíveis: {disponiveis}")
+                    print(f"Livros emprestados: {emprestados}\n")
         elif opcao == "0":
 
             confirmacao = input("Tem certeza que deseja sair?: ").strip().lower()
