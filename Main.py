@@ -48,8 +48,7 @@ def listar_livros(lista_livros):
         print(f"Autor : {livro['autor']}")
         print(f"Ano   : {livro['ano']}")
         print(f"ISBN  : {livro['isbn']}")
-        print(f"Status: {livro['status']}")
-        print("--------------------------------\n")
+        print(f"Status: {livro['status']}\n")
 
     print(f"Total de livros: {len(lista_livros)}\n")
 
@@ -111,7 +110,6 @@ def salvar_livros(lista_livros):
             escritor.writerow(livro)
 
 def exibir_menu():
-    print("\n===== SISTEMA DE GERENCIAMENTO DE BIBLIOTECA ======")
     print("1. Cadastrar livro")
     print("2. Listar todos os livros")
     print("3. Buscar algum livro")
@@ -120,7 +118,6 @@ def exibir_menu():
     print("6. Devolver algum livro")
     print("7. Status")
     print("0. Sair")
-    print("===================================================")
 
 def main():
     print("\nBem-vindo ao Sistema de Gerenciamento de Biblioteca!")
@@ -258,7 +255,6 @@ def main():
                 continue
 
             print("Encerrando o sistema.""Obrigado por utilizar! Até logo!")
-            print("Programa feito por João Pedro Costa Vitório")
 
             break
         else:
